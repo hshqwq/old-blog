@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: MicrosoftYaHeiUI;
+}
+
+body{
+    background-color: #eee;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*header*/
+#mainHead{
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem 1rem;
+    background-color: #fff2;
+    background-color: #fff;
+    display: flex;
+    /*保持在所有元素上面*/
+    position: fixed;
+}
+
+#mainHead>span{
+    margin: 5px;
+}
+
+#headMainTitle{
+    color: black;
+    font-family: Consolas;
+    font-size: 1.25rem;
+}
+
+#headMain{
+    padding-left: 50px;
+}
+
+#headMain a{
+    color: black;
+}
