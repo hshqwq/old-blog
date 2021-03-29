@@ -1,1 +1,1 @@
-## Welcome to hshqwq's GitHub Pages
+## Welcome to the hshqwq's GitHub Pages
