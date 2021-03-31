@@ -6,7 +6,11 @@
 }
 
 body{
-    background-color: #eee;
+    background-color: #ddd;
+}
+
+p{
+    display: inline;
 }
 
 a{
@@ -14,33 +18,152 @@ a{
 }
 
 
+/*滚动条*/
+body::-webkit-scrollbar{
+    position: absolute;
+    display: flex;
+    width: 6px;
+    background-color: #0085ff50;
+}
+
+body::-webkit-scrollbar-thumb{
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    display: flex;
+    width: 6px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #0085ff;
+}
+
 /*header*/
 #mainHead{
+    -webkit-transition: background-color .8s ease-in-out;
+    transition: background-color .8s ease-in-out;
     top: 0;
     left: 0;
     right: 0;
     padding: .5rem 1rem;
     background-color: #fff2;
-    background-color: #fff;
+    /*background-color: #fff;*/
     display: flex;
-    /*保持在所有元素上面*/
     position: fixed;
+    /*-webkit-filter: blur(10px);
+    filter: blur(10px);*/
+    /*保持在所有元素上面*/
+    z-index: 100;
+    box-shadow: 0 2px 20px #0003;
 }
 
+#mainHead:hover{
+    background-color: #eee;
+}
+
+/*
+#mainHead *{
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+*/
 #mainHead>span{
     margin: 5px;
 }
 
 #headMainTitle{
+    -webkit-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
     color: black;
     font-family: Consolas;
     font-size: 1.25rem;
+}
+
+#headMainTitle:hover{
+    color: dodgerblue;
 }
 
 #headMain{
     padding-left: 50px;
 }
 
-#headMain a{
+#headMain>a{
     color: black;
+}
+
+
+/*head button*/
+
+.headButton{
+    -webkit-transition: background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
+    padding: 5px 10px;
+    margin: 0 2px;
+    background-color: transparent;
+}
+
+.headButton:hover{
+    background-color: #0001;
+}
+
+.headButton>a{
+    -webkit-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+    color: black;
+}
+
+.headButton>a:hover{
+    color: dodgerblue;
+}
+
+/*head img*/
+
+#headImg{
+    padding: 23.5%;
+    width: auto;
+    height: auto;
+    background: url(../img/Bg1.jpg) center center / cover no-repeat;
+}
+
+#headImgTitle{
+    position: absolute;
+    color: white;
+    width: 50%;
+    text-align: center;
+    font-size: 2rem;
+	margin-top: -2rem;
+}
+
+.textSelection{
+    animation: textSelection 0.8s infinite;
+    -webkit-animation: textSelection 0.8s infinite;
+}
+
+@keyframes textSelection {
+    50% {color: transparent}
+}
+
+@-webkit-keyframes textSelection {
+    50% {color: transparent}
+}
+
+
+/*main*/
+main{
+    display: block;
+    background-color: #f9f9f9;
+}
+
+#mainDiv{
+    padding: 2% 4%;
+    margin-top: -2rem;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    position: absolute;
+    display: inline;
+    border-radius: 20px;
+    width: 72%;
+    min-height: 4rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 20px 10px #0005;
+    z-index: 2;
 }
