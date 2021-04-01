@@ -147,23 +147,94 @@ body::-webkit-scrollbar-thumb{
 
 
 /*main*/
-main{
-    display: block;
-    background-color: #f9f9f9;
-}
-
-#mainDiv{
-    padding: 2% 4%;
-    margin-top: -2rem;
-    margin-bottom: 20px;
+#main,#mainDiv{
+    padding: 3rem 8%;
+    margin: -2rem 0;
     margin-left: 10%;
     position: absolute;
     display: inline;
     border-radius: 20px;
-    width: 72%;
+    width: 64%;
     min-height: 4rem;
-    text-align: center;
     background-color: #fff;
     box-shadow: 0 0 20px 10px #0005;
     z-index: 2;
+}
+
+#mainDiv>div{
+    text-align: center;
+}
+
+/*blog*/
+.blog{
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #d9d9d9;
+    border-radius: 2px;
+}
+
+.blogTitle{
+    -webkit-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.blogTitle:hover{
+    color: dodgerblue;
+}
+
+.blogText,.blogText a{
+    -webkit-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+    margin: 1rem 0 .5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.blogText a:hover{
+    color: dodgerblue;
+}
+
+.blogData,.blogTags{
+    color: #999;
+    margin-right: 1.5rem;
+}
+
+#blogFoot{
+    color: #ccc;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
+/*footer*/
+#foot{
+    position: absolute;
+    padding: 1.5rem 20% 1rem;
+    margin-top: 5rem;
+    margin-left: -23%;
+    width: 85.5%;
+    min-height: 6rem;
+    background-color: #222;
+}
+
+#foot>div{
+    display: inline-block;
+    padding: 0 .5rem;
+    margin: 0 1rem;
+    width: 170px;
+}
+
+#foot span{
+    display: inline-block;
+    margin-top: .5rem;
+}
+
+#foot a,#foot p{
+    display: block;
+    color: white;
+    margin-bottom: 5px;
 }
