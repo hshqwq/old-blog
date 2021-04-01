@@ -147,7 +147,7 @@ body::-webkit-scrollbar-thumb{
 
 
 /*main*/
-#main,#mainDiv{
+#main{
     padding: 3rem 8%;
     margin: -2rem 0;
     margin-left: 10%;
@@ -159,11 +159,6 @@ body::-webkit-scrollbar-thumb{
     background-color: #fff;
     box-shadow: 0 0 20px 10px #0005;
     z-index: 2;
-}
-
-#mainDiv>span{
-    display: block;
-    text-align: center;
 }
 
 /*blog*/
