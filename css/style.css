@@ -145,6 +145,27 @@ body::-webkit-scrollbar-thumb{
     50% {color: transparent}
 }
 
+/* head find */
+#headFind{
+    position: fixed;
+    right: 5px;
+}
+
+#findBox{
+    padding: 3px;
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 3px;
+    -webkit-transition: color .3s ease-in-out,border .3s ease-in-out;
+    transition: color .3s ease-in-out,border .3s ease-in-out;
+}
+
+#find{
+    background-color: transparent;
+    font-size: 1rem;
+    border: 0;
+}
 
 /*main*/
 #main{

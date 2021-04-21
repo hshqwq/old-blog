@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
     <title>hshqwq-Blog</title>
 </head>
 
@@ -26,6 +27,13 @@
                     <a class="goTools" href="http://hshqwq.github.io/tools">工具</a>
                 </span>
             </span>
+            <!-- 标题栏-搜索 -->
+            <span id="headFind">
+                <input id="findBox" type="text" maxlength="38">
+                <span class="headButton">
+                    <a id="find">搜索</a>
+                </span>
+            </span>
         </div>
         <!--img-->
         <div id="headImg" class="headImg">
@@ -37,154 +45,7 @@
     </header>
 </body>
 
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-        outline: none;
-        font-family: MicrosoftYaHeiUI;
-    }
-
-    body{
-        background-color: #ddd;
-    }
-
-    p{
-        display: inline;
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-
-    /*滚动条*/
-    body::-webkit-scrollbar{
-        position: absolute;
-        display: flex;
-        width: 6px;
-        background-color: #0085ff50;
-    }
-
-    body::-webkit-scrollbar-thumb{
-        -webkit-transition: background-color .2s ease-in-out;
-        transition: background-color .2s ease-in-out;
-        display: flex;
-        width: 6px;
-        margin: 0 auto;
-        border-radius: 10px;
-        background-color: #0085ff;
-    }
-
-    /*header*/
-    #mainHead{
-        -webkit-transition: background-color .8s ease-in-out;
-        transition: background-color .8s ease-in-out;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: .5rem 1rem;
-        background-color: #fff2;
-        /*background-color: #fff;*/
-        display: flex;
-        position: fixed;
-        /*-webkit-filter: blur(10px);
-        filter: blur(10px);*/
-        /*保持在所有元素上面*/
-        z-index: 100;
-        box-shadow: 0 2px 20px #0003;
-    }
-
-    #mainHead:hover{
-        background-color: #eee;
-    }
-
-    /*
-    #mainHead *{
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-    }
-    */
-    #mainHead>span{
-        margin: 5px;
-    }
-
-    #headMainTitle{
-        -webkit-transition: color .3s ease-in-out;
-        transition: color .3s ease-in-out;
-        color: black;
-        font-family: Consolas;
-        font-size: 1.25rem;
-    }
-
-    #headMainTitle:hover{
-        color: dodgerblue;
-    }
-
-    #headMain{
-        padding-left: 50px;
-    }
-
-    #headMain>a{
-        color: black;
-    }
-
-
-    /*head button*/
-
-    .headButton{
-        -webkit-transition: background-color .5s ease-in-out;
-        transition: background-color .5s ease-in-out;
-        padding: 5px 10px;
-        margin: 0 2px;
-        background-color: transparent;
-    }
-
-    .headButton:hover{
-        background-color: #0001;
-    }
-
-    .headButton>a{
-        -webkit-transition: color .3s ease-in-out;
-        transition: color .3s ease-in-out;
-        color: black;
-    }
-
-    .headButton>a:hover{
-        color: dodgerblue;
-    }
-
-    /*head img*/
-
-    #headImg{
-        padding: 23.5%;
-        width: auto;
-        height: auto;
-        background: url(../img/Bg1.jpg) center center / cover no-repeat;
-    }
-
-    #headImgTitle{
-        position: absolute;
-        color: white;
-        width: 50%;
-        text-align: center;
-        font-size: 2rem;
-        margin-top: -2rem;
-    }
-
-    .textSelection{
-        animation: textSelection 0.8s infinite;
-        -webkit-animation: textSelection 0.8s infinite;
-    }
-
-    @keyframes textSelection {
-        50% {color: transparent}
-    }
-
-    @-webkit-keyframes textSelection {
-        50% {color: transparent}
-    }
-</style>
 <!--<script lang="javascript/text" src="JS/index.js"></script>-->
+<script lang="javascript" src="/JS/find.js"></script>
 
 </html>
