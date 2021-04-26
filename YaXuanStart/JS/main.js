@@ -26,7 +26,7 @@ function search(engine){
         }else if(engine == 'BY-CH'){
             window.open('http://cn.bing.com/search?q=' + search.value);
         }
-        if(engine == 'BD' || engine == 'GL'|| engine == 'BY'){
+        if(engine == 'BD' || engine == 'GL'|| engine == 'BY-CH'){
         search.value = '';
         }
     }
