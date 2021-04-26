@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://hshqwq.github.io/YaXuanStart/css/style.css">
+        <link rel="icon" href="https://hshqwq.github.io/YaXuanStart/img/YaXuan.ico">
+        <title>雅轩起始页</title>
+    </head>
+    <body>
+        <div id="liveBgBox">
+            <video id="liveBg" autoplay="true" loop="true" name="media">
+            <!-- <video id="liveBg" autoplay="true" loop="true" name="media"> -->
+                <source src="https://hshqwq.github.io/YaXuanStart/img/Live_Wallpaper_2.mp4" type="vidio/mp4">
+                <source src="/img/Live_Wallpaper_2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div id="imgBgBox">
+            <img id="imgBg" src="https://hshqwq.github.io/YaXuanStart/img/bg_1.png" type="img/png">
+            <img id="imgBg" src="/img/bg_1.png" type="/img/png">
+        </div>
+        <div id="bodyBox">
+            <div id="clockBox">
+                <p id="clock">time</p>
+            </div>
+            <div id="searchBox">
+                <input id="search" type="text" value=" search ">
+                <div id="searchEngineBox" style="display: none;">
+                    <input id="searchEngineBD" type="button" onclick="search('BD')" value="百度">
+                    <input id="searchEngineGL" type="button" onclick="search('GL')" value="Google">
+                    <input id="searchEngineBY" type="button" onclick="search('BY-CH')" value="必应">
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- <script lang="javascript/text" src="https://hshqwq.github.io/FileSaver.js/src/FileSaver.js"></script> -->
+    <script lang="javascript/text" src="https://hshqwq.github.io/YaXuanStart/JS/main.js"></script>
+</html>
