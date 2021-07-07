@@ -34,7 +34,7 @@ body{
     z-index: -2;
 }
 
-/* time */
+/* body */
 #bodyBox{
     margin: auto;
     margin-top: 25vh;
@@ -43,6 +43,7 @@ body{
     transition: all .3s ease-in-out;
 }
 
+/* time */
 #clock{
     color: white;
     font-size: 2rem;
@@ -57,7 +58,6 @@ body{
 
 #search{
     padding: .75rem 2rem;
-    width: 15%;
     background-color: white;
     text-align: center;
     border: none;
@@ -68,7 +68,6 @@ body{
 }
 
 #search:hover{
-    width: 30%;
     background-color: #eee
 }
 
