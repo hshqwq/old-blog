@@ -37,6 +37,9 @@ body{
 #blocks{
 	background-color: #ddd;
 }
+#blocks, #blocks *{
+	font-size: 1rem;
+}
 .block{
 	float: left;
 	margin: 1px;
@@ -51,6 +54,8 @@ body{
 	border: none;
 	border-radius: .5rem;
 	box-shadow: 0 0 15px #0005;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
 }
 #again:hover,button:hover{
 	box-shadow: 0 0 20px #0007;
