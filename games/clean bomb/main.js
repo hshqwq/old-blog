@@ -14,7 +14,8 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 					mask[j] = 3;
 				}
 				print();
-				document.body.innerHTML += '<h1>Game Over</h1>';
+				document.querySelector('#gameText').innerHTML = 'Game Over';
+				document.querySelector('#gameText').style.display = 'block';
 				return 'game over';
 			}
 		}
@@ -27,7 +28,8 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 				}
 			}
 			print();
-			document.body.innerHTML += '<h1>You Win</h1>';
+			document.querySelector('#gameText').innerHTML = 'You Win';
+			document.querySelector('#gameText').style.display = 'block';
 			return 'win';
 		}
 		return null;
@@ -130,7 +132,7 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 	// init
 	let mouse = {'x': 0, 'y': 0}, width = Number(mapWidth), height = Number(mapHeight), bomb = Number(theNuberOfBombs), map = new Array, mask = new Array, marks = 0, flags = 0;
 	
-	document.body.innerHTML = `<h1 id="title">扫雷</h1><div id="blockBox" style="width: ${width * 18}px;"><div id="messageBox"><div id="messageName"><span>分数</span><span>剩余雷数</span></div><div><span id="marks">0</span><span id="nuberOfBombs">0</span></div></div><div id="blocks" style="width: ${width * 18}px;height: ${height * 18}px;"></div></div>`;
+	document.body.innerHTML = `<h1 id="title">扫雷</h1><div id="blockBox" style="width: ${width * 18}px;"><div id="messageBox"><div id="messageName"><span>分数</span><span>剩余雷数</span></div><div><span id="marks">0</span><span id="nuberOfBombs">0</span></div></div><div id="blocks" style="width: ${width * 18}px;height: ${height * 18}px;"></div></div><h1 id="gameText"></h1><button id="again">重新开始</button>`;
 	for(let i = 0;i < width * height;i++) {
 		map[i] = 0;
 		mask[i] = 0;
@@ -210,7 +212,9 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 			}
 			print();
 		}
-		
+	}
+	document.querySelector('#again').onclick = () => {
+		window.history.go(0);
 	}
 }
 
