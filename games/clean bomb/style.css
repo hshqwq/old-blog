@@ -33,12 +33,14 @@ body{
 	width: 3rem;
 	margin: .5rem auto;
 	box-shadow: 0 0 10px #0005;
+	border-radius: .5rem;
 }
 #blocks{
 	background-color: #ddd;
 }
 #blocks, #blocks *{
 	font-size: 1rem;
+	border-radius: .25rem;
 }
 .block{
 	float: left;
