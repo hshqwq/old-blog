@@ -8,11 +8,16 @@
 	</head>
 	<body>
 		<h1 id="title">扫雷</h1>
-		<p>宽度<input id="width" type="number" min="9" max="54" value="9"/></p>
-		<p>高度<input id="height" type="number" min="9" max="54" value="9"/></p>
-		<p>炸弹数<input id="bombs" type="number" min="5" value="5"/></p>
-		<button id="start">确定</button>
-		<div id="error" style="color: red;"></div>
+		<div id="mainBox">
+			<div id="chooseBox">
+				<p>宽度：<input id="width" type="number" min="9" max="54" value="9"/></p>
+				<p>高度：<input id="height" type="number" min="9" max="54" value="9"/></p>
+				<p>炸弹数：<input id="bombs" type="number" min="5" value="5"/></p>
+			</div>
+			<button id="start">确定</button>
+			<div id="error" style="color: red;"></div>
+		</div>
+		<img id="bg">
 		<script lang="javascript/text" src="main.js"></script>
 	</body>
 </html>

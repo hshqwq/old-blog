@@ -16,6 +16,7 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 				print();
 				document.querySelector('#gameText').innerHTML = 'Game Over';
 				document.querySelector('#gameText').style.display = 'block';
+				gameIsOver = true;
 				return 'game over';
 			}
 		}
@@ -30,6 +31,7 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 			print();
 			document.querySelector('#gameText').innerHTML = 'You Win';
 			document.querySelector('#gameText').style.display = 'block';
+			gameIsOver = true;
 			return 'win';
 		}
 		return null;
@@ -53,13 +55,6 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 					document.querySelector(`#block_${countCDN(j, i)}`).innerHTML = map[countCDN(j, i)];
 					document.querySelector(`#block_${countCDN(j, i)}`).style.backgroundColor = 'white';
 					document.querySelector(`#block_${countCDN(j, i)}`).style.color = 'black';
-				}
-				for(let i = 0;i < width * height;i++) {
-					if(i == countCDN(mouse.x, mouse.y)) {
-						document.querySelector(`#block_${i}`).style.outline = '1px solid red';
-					} else {
-						document.querySelector(`#block_${i}`).style.outline = 'none';
-					}
 				}
 			}
 		}
@@ -130,9 +125,9 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 	}
 	
 	// init
-	let mouse = {'x': 0, 'y': 0}, width = Number(mapWidth), height = Number(mapHeight), bomb = Number(theNuberOfBombs), map = new Array, mask = new Array, marks = 0, flags = 0;
+	let mouse = {'x': 0, 'y': 0}, width = Number(mapWidth), height = Number(mapHeight), bomb = Number(theNuberOfBombs), map = new Array, mask = new Array, marks = 0, flags = 0, gameIsOver = false;
 	
-	document.body.innerHTML = `<h1 id="title">扫雷</h1><div id="blockBox" style="width: ${width * 18}px;"><div id="messageBox"><div id="messageName"><span>分数</span><span>剩余雷数</span></div><div><span id="marks">0</span><span id="nuberOfBombs">0</span></div></div><div id="blocks" style="width: ${width * 18}px;height: ${height * 18}px;"></div></div><h1 id="gameText"></h1><button id="again">重新开始</button>`;
+	document.querySelector('#mainBox').innerHTML = `<div id="blockBox" style="width: ${width * 18}px;"><div id="messageBox"><div id="messageName"><span>分数</span><span>剩余雷数</span></div><div><span id="marks">0</span><span id="nuberOfBombs">0</span></div></div><div id="blocks" style="width: ${width * 18}px;height: ${height * 18}px;"></div></div><h1 id="gameText"></h1><button id="again">重新开始</button>`;
 	for(let i = 0;i < width * height;i++) {
 		map[i] = 0;
 		mask[i] = 0;
@@ -179,38 +174,27 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 		document.querySelector(`#block_${i}`).onmouseover = () => {
 			mouse.x = i % width;
 			mouse.y = (i - (i % width)) / width;
-			print();
 		}
 	}
 	document.querySelector('#blocks').onmousedown = (event) => {
-		if(event.button == 0) {
-			openDNS(mouse.x, mouse.y);
-		} else if(event.button == 2) {
-			mask[countCDN(mouse.x, mouse.y)] == 0 ? mask[countCDN(mouse.x, mouse.y)] = 2 : mask[countCDN(mouse.x, mouse.y)] = 0;
-			print();
-			flags = 0;
-			for(let i = 0;i < width * height;i++) {
-				if(mask[i] == 2) {
-					flags += 1;
-				}
-			}
-			document.querySelector('#nuberOfBombs').innerHTML = bomb - flags;
-		}
-	}
-	window.onkeyup = (event) => {
-		if(mask[0] != 3) {
-			if(event.keyCode == 87) {
-				addMouseDNS(0, -1);
-			} else if(event.keyCode == 65) {
-				addMouseDNS(-1, 0);
-			} else if(event.keyCode == 83) {
-				addMouseDNS(0, 1);
-			} else if(event.keyCode == 68) {
-				addMouseDNS(1, 0);
-			} else if(event.keyCode == 32) {
+		if(!gameIsOver) {
+			if(event.button == 0) {
 				openDNS(mouse.x, mouse.y);
+			} else if(event.button == 2) {
+				if(mask[countCDN(mouse.x, mouse.y)] == 0) {
+					mask[countCDN(mouse.x, mouse.y)] = 2;
+				} else if([countCDN(mouse.x, mouse.y)] == 2) {
+					mask[countCDN(mouse.x, mouse.y)] = 0;
+				}
+				print();
+				flags = 0;
+				for(let i = 0;i < width * height;i++) {
+					if(mask[i] == 2) {
+						flags += 1;
+					}
+				}
+				document.querySelector('#nuberOfBombs').innerHTML = bomb - flags;
 			}
-			print();
 		}
 	}
 	document.querySelector('#again').onclick = () => {
@@ -219,6 +203,7 @@ function gamestart(mapWidth, mapHeight, theNuberOfBombs) {
 }
 
 window.onload = () => {
+	document.querySelector('#bg').src = `img/${Math.round(Math.random() * 5 + 1)}.jpg`;
 	document.querySelector('#start').addEventListener('click',() => { 
 		if(document.querySelector('#bombs').value < document.querySelector('#width').value * document.querySelector('#height').value) {
 			gamestart(document.querySelector('#width').value, document.querySelector('#height').value, document.querySelector('#bombs').value);
