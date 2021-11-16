@@ -296,6 +296,7 @@ hr{
 }
 
 .mediaMusic{
+	max-width: 24rem;
 	width: 60%;
 	height: 6rem;
 	margin: 1rem auto;
