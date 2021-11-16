@@ -5,7 +5,7 @@ window.onload = () => {
 		mediaMusic[i * 3 + 1] = `${document.getElementsByClassName('mediaMusic')[i].dataset.name}`;
 		mediaMusic[i * 3 + 2] = `${document.getElementsByClassName('mediaMusic')[i].dataset.img}`;
 		if(mediaMusic[i * 3 + 2] == 'none'){
-			document.getElementsByClassName('mediaMusic')[i].innerHTML = `<img src="https://hshqwq.github.io/img/mediaMusicImg.jpge">`;
+			document.getElementsByClassName('mediaMusic')[i].innerHTML = `<img src="https://hshqwq.github.io/img/mediaMusicImg.jpeg">`;
 		} else {
 			document.getElementsByClassName('mediaMusic')[i].innerHTML = `<img src="${mediaMusic[i * 3 +2]}">`;
 		}
