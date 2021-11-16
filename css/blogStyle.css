@@ -294,3 +294,38 @@ hr{
     border: 1px solid #eee;
     border-radius: 5px;
 }
+
+.mediaMusic{
+	width: 60%;
+	height: 6rem;
+	margin: 1rem auto;
+	padding: 1rem;
+	text-align: center;
+	display: flex;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #0004;
+}
+.mediaMusic div{
+	width: 100%;
+}
+.mediaMusic p{
+	height: 2rem;
+	padding: .5rem;
+	font-size: 1.5rem;
+	overflow: hidden;
+}
+.mediaMusic img{
+	width: 6rem;
+	height: 6rem;
+	float: left;
+	border-radius: 50%;
+}
+.mediaMusic audio{
+	height: 3rem;
+	width: 95%;
+}
+.mediaMusic audio::-webkit-media-controls-enclosure{
+	background-color: #fff0;
+	border: none;
+	border-radius: 0;
+}
