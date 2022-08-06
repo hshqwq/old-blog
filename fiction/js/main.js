@@ -10,28 +10,19 @@ const headBgList = [
     '//zh.res.livewallpaper.giantapp.cn/livewallpaper/upload/wallpapers/44ea745671324c63bb32717ddf4a9509/bf4a0bf261d2f9a802635fcc78410cf6/1641216252585_eYxTR.mp4'
 ];
 
-function createHeadPic() { // 生成随机头图
-    $('#head-bg').remove();
+function load(url) {
+    $('a#home').attr('href', '/fiction').text('< 返回目录');
+    $('#body').load(url);
+}
+
+
+
+$(() => {
+    // 生成随机头图
     $('#head').prepend(`<video id="head-bg" autoplay loop muted src="${window.location.protocol + headBgList[Math.round(Math.random() * (headBgList.length - 1 + 0.4999999999999999) - 0.5)]}"></video>`);
     $(window).unbind('click keydown').one('click keydown', () => {
         $('#head-bg')[0].play();
     });
-}
-function load(url) {
-    if (url === 'fiction/directory.html') {
-        $('a#home').attr('href', '/').text('< 返回主页');
-        window.history.replaceState({}, '', '');
-    } else {
-        $('a#home').attr('href', '/fiction').text('< 返回目录');
-        window.history.replaceState({
-            path: '?path=' + url
-        }, '', '?path=' + url);
-    }
-    $('#body').load(url);
-    createHeadPic();
-}
-
-$(() => {
     if (/^\?.*path=.*/g.test(window.location.search)) {
         let urls = window.location.search, url = 'fiction/directory.html';
 
@@ -47,6 +38,6 @@ $(() => {
         }
         load(url);
     } else {
-        load('fiction/directory.html');
+        $('#body').load('fiction/directory.html');
     }
 });
